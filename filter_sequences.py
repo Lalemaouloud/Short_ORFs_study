@@ -1,4 +1,4 @@
-#This script reads the gene_calls.faa ggCaller's output file, filters out genes sequences that are longuer than 100 bp (short ORFs), and writes the remaining sequences to a new file
+#This script reads the gene_calls.faa ggCaller's output file, filters out genes sequences that are longuer than 100 bp (long ORFs), and writes the remaining sequences (Short ORFs) to a new file
 #Author : LM
 
 def filter_short_sequences(input_file, output_file, max_length):
