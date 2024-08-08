@@ -21,7 +21,7 @@ def filter_short_sequences(input_file, output_file, max_length):
         if write_sequence and len(current_sequence) <= max_length:
             outfile.write(header + current_sequence + "\n")
 
-# Exemple d'utilisation :
+# Exemple d'utilisation (nom des files) :
 input_file = "gene_calls.faa"
 output_file = "short_orfs.faa"
 max_length = 100
