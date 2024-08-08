@@ -35,3 +35,10 @@ for file in *.fasta; do
 done
 
 echo "All transcripts have been combined into $output_file"
+
+
+
+
+#To make sure the script worked you can run : grep -c ">" *.fasta | awk '{sum += $1} END {print sum}' which will give you the number of ">" characters across all .fasta files
+# and then run grep -c ">" All_transcripts.fasta | awk '{sum += $1} END {print sum} to know also the number of sequences in the combined file. 
+
