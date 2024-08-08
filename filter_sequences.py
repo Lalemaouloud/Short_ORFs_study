@@ -21,9 +21,15 @@ def filter_short_sequences(input_file, output_file, max_length):
         if write_sequence and len(current_sequence) <= max_length:
             outfile.write(header + current_sequence + "\n")
 
-# Exemple d'utilisation (nom des files) :
+
 input_file = "gene_calls.faa"
 output_file = "short_orfs.faa"
 max_length = 100
 
 filter_short_sequences(input_file, output_file, max_length)
+
+
+
+##To make sure the output file contains only sequences shorter than 100bp you can execute this : 
+
+#awk '/^>/ {if (seq && length(seq) > 100) {print seq} seq=""; next} {seq=seq$0} END {if (seq && length(seq) > 100) print seq}' short_orfs.faa
