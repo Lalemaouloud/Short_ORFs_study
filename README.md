@@ -9,7 +9,7 @@
   - [4. Labeling Genes for Model Training](#4-labeling-genes-for-model-training)
   - [5. Final Training File](#5-final-training-file)
 - [Next Steps](#next-steps)
-
+- [Reading for this project](#Reading for this project)
 
 ## Overview
 
@@ -107,17 +107,70 @@ This file includes the sequence of each gene followed by a label indicating whet
 
 
 
-##Next Steps
+## Next Steps
+
+As I'm still working on this project the next steps will be : 
 
 - Model Training: The labeled dataset will be used to train a machine learning model, CNN as our model 1, and also BERT as our model 2.
 - Model Evaluation: The model will be evaluated using various metrics to ensure its accuracy and reliability in predicting small ORF expression.
 - Model Deployment: The final model will be shared as part of this repository.
 
 
+# Bibliography and Related Articles
+
+## Readings for this project
 
 
+### Population Genomic Datasets
 
+- **Title:** Population Genomic Datasets Describing the Post-Vaccine Evolutionary Epidemiology of *Streptococcus pneumoniae*
+- **Link:** [Nature Scientific Data](https://www.nature.com/articles/sdata201558)
 
+### Transcriptome Analysis
+
+- **Title:** High-Resolution Analysis of the Pneumococcal Transcriptome Under a Wide Range of Infection-Relevant Conditions
+- **Link:** [PubMed](https://pubmed.ncbi.nlm.nih.gov/30165663/)
+
+### Genomic Language Models
+
+- **Title:** ProkBERT Family: Genomic Language Models for Microbiome Applications
+- **Link:** [Frontiers in Microbiology](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2023.1331233/full)
+
+- **Title:** DNABERT: Pre-trained Bidirectional Encoder Representations from Transformers Model for DNA-language in Genome
+- **Link:** [Bioinformatics Journal](https://academic.oup.com/bioinformatics/article/37/15/2112/6128680)
+
+### Small ORFs and Microproteins
+
+- **Title:** sORFdb – A Database for sORFs, Small Proteins, and Small Protein Families in Bacteria
+- **Link:** [bioRxiv](https://www.biorxiv.org/content/10.1101/2024.06.19.599710v1)
+
+- **Title:** Short Open Reading Frames (sORFs) and Microproteins: An Update on Their Identification and Validation Measures
+- **Link:** [Journal of Biomedical Science](https://jbiomedsci.biomedcentral.com/articles/10.1186/s12929-022-00802-5#:~:text=A%20short%20open%20reading%20frame,comprises%20)
+
+### DNA Sequence Classification
+
+- **Title:** DNA Sequence Classification by Convolutional Neural Network
+- **Link:** [ResearchGate](https://www.researchgate.net/publication/301703031_DNA_Sequence_Classification_by_Convolutional_Neural_Network)
+
+### Machine Learning in Genomics
+
+- **Title:** Apply Machine Learning Algorithms for Genomics Data Classification
+- **Authors:** Ernest Bonat, Ph.D., Bishes Rayamajhi, MS.
+- **Date:** February 03, 2021
+
+- **Title:** Advanced DNA Sequence Text Classification Using Natural Language Processing
+- **Link:** [Ernest Bonat on Medium](https://ernest-bonat.medium.com/advanced-dna-sequence-text-classification-using-natural-language-processing-8860c3c05692)
+
+### BERT and Deep Learning Resources
+
+- **Title:** Slides for BERT, Stanford
+- **Link:** [Stanford NLP Seminar](https://nlp.stanford.edu/seminar/details/jdevlin.pdf)
+
+- **Title:** Deep Learning in Genomics Primer (Tutorial)
+- **Link:** [GitHub Tutorial](https://github.com/abidlabs/deep-learning-genomics-primer/blob/master/A_Primer_on_Deep_Learning_in_Genomics_Public.ipynb)
+
+- **Title:** Application of BERT to Enable Gene Classification Based on Clinical Evidence
+- **Link:** [NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7563092/)
 
 
 
