@@ -9,7 +9,7 @@
   - [4. Labeling Genes for Model Training](#4-labeling-genes-for-model-training)
   - [5. Final Training File](#5-final-training-file)
 - [Next Steps](#next-steps)
-- [Reading for this project](#Reading for this project)
+- [Reading for this project](#Reading-for-this-project)
 
 ## Overview
 
