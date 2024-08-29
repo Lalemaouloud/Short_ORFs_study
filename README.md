@@ -1,5 +1,16 @@
 # Small ORF Expression Prediction Model
 
+
+- [Overview](#overview)
+- [Project Workflow](#project-workflow)
+  - [1. Gene Identification with ggCaller](#1-gene-identification-with-ggcaller)
+  - [2. Transcript Alignment with Kallisto](#2-transcript-alignment-with-kallisto)
+  - [3. Kallisto Output Analysis](#3-kallisto-output-analysis)
+  - [4. Labeling Genes for Model Training](#4-labeling-genes-for-model-training)
+  - [5. Final Training File](#5-final-training-file)
+- [Next Steps](#next-steps)
+
+
 ## Overview
 
 This project aims to develop a machine learning model to predict the expression of small Open Reading Frames (sORFs). Small ORFs are typically challenging to identify and predict due to their short length, but they play a significant role in various biological processes. By accurately predicting which sORFs are expressed, we can gain insights into their functional roles in the genome.
@@ -8,22 +19,22 @@ This project aims to develop a machine learning model to predict the expression 
 
 ### 1. Gene Identification with ggCaller
 
-The initial step in the project involved identifying potential small ORFs from a dataset of **616 pneumococcal genomes** sourced from [Bentley et al. 2015](https://www.nature.com/articles/sdata201558). The following steps were performed:
+The initial step in the project involved identifying potential small ORFs from a dataset of **616 pneumococcal genomes** sourced from [here](https://www.nature.com/articles/sdata201558). The following steps were performed:
 
-- **Tool Used:** [ggCaller](https://github.com/ghoresh11/ggCaller)
+- **Tool Used:** [ggCaller]([https://github.com/ghoresh11/ggCaller](https://github.com/bacpop/ggCaller))
 - **Parameters:**
   - `--min-orf-length` = 19
   - `--min-orf-score` = 19
 
-The ggCaller tool was used to predict small ORFs from these genomes. After running ggCaller, a total of **6,013 genes** were predicted.
+The ggCaller was used to predict small ORFs from these genomes. After running ggCaller, a total of **6,013 genes** were predicted.
 
 Here is the distribution of the genes after filtering the long ORFs:
 
-![Gene Distribution](path_to_figure)
+![Gene Distribution](figure2.png)
 
 ### 2. Transcript Alignment with Kallisto
 
-The next step was to align the transcripts from the study [Delcher et al. 2018](https://pubmed.ncbi.nlm.nih.gov/30165663/) to the identified small ORFs to determine which of these ORFs are expressed.
+The next step was to align the transcripts from the study [Aprianto R et al. 2018](https://pubmed.ncbi.nlm.nih.gov/30165663/) to the identified small ORFs to determine which of these ORFs are expressed.
 
 - **Tool Used:** [Kallisto](https://pachterlab.github.io/kallisto/about)
 - **Index File:** `short_ORFs.ffn`
@@ -34,12 +45,17 @@ The alignment was performed using the cDNA expression data from the study. The d
 
 ### 3. Kallisto Output Analysis
 
-After the alignment, the output from Kallisto was analyzed, specifically focusing on the `abundance.tsv` file. The key metrics in this file are:
+After the alignment, the output from Kallisto was analyzed, specifically focusing on the `abundance.tsv` file. 
+
+Metrics in aboudance.tsv file are : 
 
 - **eff_length:** The effective length of the transcript, considering the fragment length distribution.
 - **est_counts:** The estimated number of reads derived from this transcript.
-- **TPM (Transcripts Per Million):** A normalized measure of transcript abundance, allowing comparison of transcript levels within and between samples.
 
+but The key metric for our analysis is:
+
+
+- **TPM (Transcripts Per Million):** A normalized measure of transcript abundance, allowing comparison of transcript levels within and between samples.
 #### TPM Calculation:
 
 1. **RPK (Reads Per Kilobase):** Divide the read counts by the length of each gene in kilobases.
@@ -48,9 +64,9 @@ After the alignment, the output from Kallisto was analyzed, specifically focusin
 
 **Note:** TPM is preferred over RPKM/FPKM because it ensures that the sum of TPMs in each sample is the same, making cross-sample comparisons more reliable.
 
-Here is an example distribution of TPM values:
+Here is a distribution of TPM values:
 
-![TPM Distribution](path_to_figure)
+![TPM Distribution](figure1.png)
 
 ### 4. Labeling Genes for Model Training
 
@@ -77,3 +93,35 @@ ATGCGT...TTGA
 >gene_2
 ATGCCA...TCAA
 1
+```
+This file includes the sequence of each gene followed by a label indicating whether the gene is expressed (1) or not (0).
+
+![example of our labeled data](figure3.png)
+
+
+
+
+
+
+
+
+
+
+##Next Steps
+
+- Model Training: The labeled dataset will be used to train a machine learning model, CNN as our model 1, and also BERT as our model 2.
+- Model Evaluation: The model will be evaluated using various metrics to ensure its accuracy and reliability in predicting small ORF expression.
+- Model Deployment: The final model will be shared as part of this repository.
+
+
+
+
+
+
+
+
+
+
+
+
+
